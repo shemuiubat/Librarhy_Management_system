@@ -1,0 +1,27 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Nahid
+ */
+import java.sql.*;
+import javax.swing.JOptionPane;
+public class DBMSconnect {
+  Connection con;  
+  
+  public static Connection condb(){
+      try {
+          Class.forName("org.sqlite.JDBC");
+          Connection con = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Nahid\\Documents\\NetBeansProjects\\LibraryManage\\LMS.sqlite");
+          return con;
+      } catch (Exception e) {
+          JOptionPane.showMessageDialog(null, e);
+          return null;
+      }
+      
+  }
+}
